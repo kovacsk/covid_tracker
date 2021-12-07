@@ -1,18 +1,19 @@
-import 'package:covid_tracker/feature/home/data/repository/home_repository.dart';
-
-import '../../../../model/json_models.dart';
+import 'package:covid_tracker/common/data/model/complete_cases.dart';
+import 'package:covid_tracker/common/data/repository/cases_repository.dart';
+import 'package:injectable/injectable.dart';
 
 abstract class GetFavoriteCountriesUseCase {
-  Future<List<Country>> execute();
+  Future<List<CompleteCases>> execute();
 }
 
+@Injectable(as: GetFavoriteCountriesUseCase)
 class GetFavoriteCountriesUseCaseImpl implements GetFavoriteCountriesUseCase {
-  final HomeRepository _homeRepository;
+  final CasesRepository _casesRepository;
 
-  GetFavoriteCountriesUseCaseImpl(this._homeRepository);
+  GetFavoriteCountriesUseCaseImpl(this._casesRepository);
 
   @override
-  Future<List<Country>> execute() {
-    return _homeRepository.getFavoriteCountries();
+  Future<List<CompleteCases>> execute() {
+    return _casesRepository.getFavoriteCountries();
   }
 }

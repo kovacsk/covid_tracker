@@ -1,6 +1,5 @@
-import 'package:covid_tracker/model/json_models.dart';
 import 'package:covid_tracker/network/network_service.dart';
-
+/*
 class NWRepository{
 
   var nwService = NetworkService();
@@ -27,3 +26,7 @@ class NWRepository{
     return response;
   }
 }
+
+
+
+ */

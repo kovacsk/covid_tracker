@@ -1,5 +1,5 @@
 import 'dart:collection';
-
+/*
 import 'package:covid_tracker/model/json_models.dart';
 
 import 'package:covid_tracker/repositories/network_repository.dart';
@@ -87,14 +87,14 @@ class _CountryPageState extends State<CountryPage> {
                         var countryDetails = snapshot.data;
                         var list = countryDetails!.entries.toList();
                         if (dropdownValue == "Cases") {
-                          list.sort((b, a) => a.value.countrydata.confirmed!
-                              .compareTo(b.value.countrydata.confirmed!));
+                          list.sort((b, a) => a.value.countryData.confirmed!
+                              .compareTo(b.value.countryData.confirmed!));
                         } else if (dropdownValue == "Deaths") {
-                          list.sort((b, a) => a.value.countrydata.deaths!
-                              .compareTo(b.value.countrydata.deaths!));
+                          list.sort((b, a) => a.value.countryData.deaths!
+                              .compareTo(b.value.countryData.deaths!));
                         } else if (dropdownValue == "Recovered") {
-                          list.sort((b, a) => a.value.countrydata.recovered!
-                              .compareTo(b.value.countrydata.recovered!));
+                          list.sort((b, a) => a.value.countryData.recovered!
+                              .compareTo(b.value.countryData.recovered!));
                         }
                         return ListView.builder(
                           physics: const AlwaysScrollableScrollPhysics(),
@@ -155,19 +155,19 @@ class ListItem extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               Text(
-                "Capital: " + item.countrydata.capital_city.toString(),
+                "Capital: " + item.countryData.capital_city.toString(),
                 textAlign: TextAlign.start,
               ),
               Text(
-                "Confirmed cases: " + item.countrydata.confirmed.toString(),
+                "Confirmed cases: " + item.countryData.confirmed.toString(),
                 textAlign: TextAlign.start,
               ),
               Text(
-                "Confirmed deaths: " + item.countrydata.deaths.toString(),
+                "Confirmed deaths: " + item.countryData.deaths.toString(),
                 textAlign: TextAlign.start,
               ),
               Text(
-                "Recovered: " + item.countrydata.recovered.toString(),
+                "Recovered: " + item.countryData.recovered.toString(),
                 textAlign: TextAlign.start,
               ),
             ],
@@ -205,13 +205,17 @@ class ListItem extends StatelessWidget {
   }
 
   double _calcPercent() {
-    if (item.countrydata.confirmed != null &&
-        item.countrydata.population != null) {
-      return (item.countrydata.confirmed!.toDouble() /
-              item.countrydata.population!.toDouble())
+    if (item.countryData.confirmed != null &&
+        item.countryData.population != null) {
+      return (item.countryData.confirmed!.toDouble() /
+              item.countryData.population!.toDouble())
           .toDouble();
     } else {
       return 0.0;
     }
   }
 }
+
+ */
+
+

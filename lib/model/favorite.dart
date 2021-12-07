@@ -1,5 +1,4 @@
 
-import 'package:covid_tracker/model/json_models.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

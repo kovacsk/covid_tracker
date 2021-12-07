@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import 'package:covid_tracker/model/json_models.dart';
+/*
 
 
 
@@ -42,3 +42,7 @@ class NetworkService {
 
 
 }
+
+
+
+ */
