@@ -48,30 +48,24 @@ class _MainPage extends State<MainPage> {
                         var countryDetails = snapshot.data!.countrydata;
                         var confirmedpercent = 0.0;
                         var recovered = 0.0;
-                        if (countryDetails.confirmed != null &&
-                            countryDetails.population != null) {
+                        if (countryDetails.confirmed != null && countryDetails.population != null) {
                           confirmedpercent =
-                              ((countryDetails.confirmed!.toDouble()) /
-                                  (countryDetails.population!.toDouble()));
+                              ((countryDetails.confirmed!.toDouble()) / (countryDetails.population!.toDouble()));
                         }
-                        if (countryDetails.recovered != null &&
-                            countryDetails.confirmed != null) {
-                          recovered = ((countryDetails.recovered!.toDouble()) /
-                              (countryDetails.confirmed!.toDouble()));
+                        if (countryDetails.recovered != null && countryDetails.confirmed != null) {
+                          recovered = ((countryDetails.recovered!.toDouble()) / (countryDetails.confirmed!.toDouble()));
                         }
 
                         return Center(
                           child: Column(
                             children: [
                               Text(
-                                "World Population: " +
-                                    countryDetails.population.toString(),
+                                "World Population: " + countryDetails.population.toString(),
                                 textAlign: TextAlign.start,
                                 textScaleFactor: 1.0,
                               ),
                               Text(
-                                "Confirmed Cases: " +
-                                    countryDetails.confirmed.toString(),
+                                "Confirmed Cases: " + countryDetails.confirmed.toString(),
                                 textAlign: TextAlign.start,
                                 textScaleFactor: 1.0,
                               ),
@@ -81,8 +75,7 @@ class _MainPage extends State<MainPage> {
                                 textScaleFactor: 1.0,
                               ),
                               Text(
-                                "Recovered: " +
-                                    countryDetails.recovered.toString(),
+                                "Recovered: " + countryDetails.recovered.toString(),
                                 textAlign: TextAlign.start,
                                 textScaleFactor: 1.0,
                               ),
@@ -91,13 +84,8 @@ class _MainPage extends State<MainPage> {
                                   child: CircularPercentIndicator(
                                     radius: 100.0,
                                     center: Text(
-                                      (confirmedpercent * 100)
-                                              .toInt()
-                                              .toString() +
-                                          "%",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20.0),
+                                      (confirmedpercent * 100).toInt().toString() + "%",
+                                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                                     ),
                                     footer: Text("Cases confirmed"),
                                     animation: true,
@@ -113,11 +101,8 @@ class _MainPage extends State<MainPage> {
                                   child: CircularPercentIndicator(
                                     radius: 100.0,
                                     center: Text(
-                                      (recovered * 100).toInt().toString() +
-                                          "%",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20.0),
+                                      (recovered * 100).toInt().toString() + "%",
+                                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                                     ),
                                     footer: Text("Recovered"),
                                     animation: true,
@@ -159,20 +144,14 @@ class _MainPage extends State<MainPage> {
                         var vaccinateDetails = snapshot.data!.vaccinatedData;
                         var fullvaccpercent = 0.0;
                         var partvaccpercent = 0.0;
-                        if (vaccinateDetails.people_partially_vaccinated !=
-                                null &&
+                        if (vaccinateDetails.people_partially_vaccinated != null &&
                             vaccinateDetails.population != null) {
-                          partvaccpercent = ((vaccinateDetails
-                                  .people_partially_vaccinated!
-                                  .toDouble()) /
+                          partvaccpercent = ((vaccinateDetails.people_partially_vaccinated!.toDouble()) /
                               (vaccinateDetails.population!.toDouble()));
                         }
-                        if (vaccinateDetails.people_partially_vaccinated !=
-                                null &&
+                        if (vaccinateDetails.people_partially_vaccinated != null &&
                             vaccinateDetails.population != null) {
-                          fullvaccpercent = ((vaccinateDetails
-                                  .people_vaccinated!
-                                  .toDouble()) /
+                          fullvaccpercent = ((vaccinateDetails.people_vaccinated!.toDouble()) /
                               (vaccinateDetails.population!.toDouble()));
                         }
 
@@ -182,16 +161,12 @@ class _MainPage extends State<MainPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "Partially vaccinated: " +
-                                    vaccinateDetails.people_partially_vaccinated
-                                        .toString(),
+                                "Partially vaccinated: " + vaccinateDetails.people_partially_vaccinated.toString(),
                                 textAlign: TextAlign.start,
                                 textScaleFactor: 1.0,
                               ),
                               Text(
-                                "Total vaccinated: " +
-                                    vaccinateDetails.people_vaccinated
-                                        .toString(),
+                                "Total vaccinated: " + vaccinateDetails.people_vaccinated.toString(),
                                 textAlign: TextAlign.start,
                                 textScaleFactor: 1.0,
                               ),
@@ -200,16 +175,10 @@ class _MainPage extends State<MainPage> {
                                   child: CircularPercentIndicator(
                                     radius: 100.0,
                                     center: Text(
-                                      (partvaccpercent * 100)
-                                              .toInt()
-                                              .toString() +
-                                          "%",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20.0),
+                                      (partvaccpercent * 100).toInt().toString() + "%",
+                                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                                     ),
-                                    footer:
-                                        Text("Population partially vaccinated"),
+                                    footer: Text("Population partially vaccinated"),
                                     animation: true,
                                     animationDuration: 1200,
                                     lineWidth: 15.0,
@@ -223,13 +192,8 @@ class _MainPage extends State<MainPage> {
                                   child: CircularPercentIndicator(
                                     radius: 100.0,
                                     center: Text(
-                                      (fullvaccpercent * 100)
-                                              .toInt()
-                                              .toString() +
-                                          "%",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20.0),
+                                      (fullvaccpercent * 100).toInt().toString() + "%",
+                                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
                                     ),
                                     footer: Text("Population fully vaccinated"),
                                     animation: true,
@@ -267,8 +231,7 @@ class _MainPage extends State<MainPage> {
                           return Center(
                             child: Text("Hiba történt: ${snapshot.error}"),
                           );
-                        } else if (snapshot.hasData &&
-                            snapshot.data!.isNotEmpty) {
+                        } else if (snapshot.hasData && snapshot.data!.isNotEmpty) {
                           var list = snapshot.data;
                           return ListView.builder(
                             physics: const AlwaysScrollableScrollPhysics(),
@@ -279,10 +242,7 @@ class _MainPage extends State<MainPage> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => DetailPageWidget(
-                                              countryName: list![i]
-                                                  .countrydata
-                                                  .country
-                                                  .toString(),
+                                              countryName: list![i].countrydata.country.toString(),
                                             ))),
                                 child: FavoriteListItem(
                                   list![i],
@@ -378,11 +338,8 @@ class FavoriteListItem extends StatelessWidget {
   }
 
   double _calcPercent() {
-    if (item.countrydata.confirmed != null &&
-        item.countrydata.population != null) {
-      return (item.countrydata.confirmed!.toDouble() /
-              item.countrydata.population!.toDouble())
-          .toDouble();
+    if (item.countrydata.confirmed != null && item.countrydata.population != null) {
+      return (item.countrydata.confirmed!.toDouble() / item.countrydata.population!.toDouble()).toDouble();
     } else {
       return 0.0;
     }
