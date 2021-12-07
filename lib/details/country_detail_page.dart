@@ -1,4 +1,5 @@
 import 'package:covid_tracker/model/favorite.dart';
+/*
 import 'package:covid_tracker/model/json_models.dart';
 
 import 'package:covid_tracker/repositories/network_repository.dart';
@@ -96,7 +97,7 @@ class _DetailPageWidgetState extends State<DetailPageWidget> {
                     child: Text("Hiba történt: ${snapshot.error}"),
                   );
                 } else if (snapshot.hasData) {
-                  var countryDetails = snapshot.data!.countrydata;
+                  var countryDetails = snapshot.data!.countryData;
                   var deaths = 0.0;
                   var confirmed = 0.0;
                   var recovered = 0.0;
@@ -277,3 +278,5 @@ class ListItem extends StatelessWidget {
     );
   }
 }
+
+ */

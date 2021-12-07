@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'details/country_detail_page.dart';
-import 'model/json_models.dart';
 
+/*
 class MainPage extends StatefulWidget {
   _MainPage createState() => _MainPage();
 }
@@ -45,7 +45,7 @@ class _MainPage extends State<MainPage> {
                           child: Text("Hiba történt: ${snapshot.error}"),
                         );
                       } else if (snapshot.hasData) {
-                        var countryDetails = snapshot.data!.countrydata;
+                        var countryDetails = snapshot.data!.countryData;
                         var confirmedpercent = 0.0;
                         var recovered = 0.0;
                         if (countryDetails.confirmed != null && countryDetails.population != null) {
@@ -242,7 +242,7 @@ class _MainPage extends State<MainPage> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => DetailPageWidget(
-                                              countryName: list![i].countrydata.country.toString(),
+                                              countryName: list![i].countryData.country.toString(),
                                             ))),
                                 child: FavoriteListItem(
                                   list![i],
@@ -295,23 +295,23 @@ class FavoriteListItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Country: " + item.countrydata.country.toString(),
+              "Country: " + item.countryData.country.toString(),
               textAlign: TextAlign.start,
             ),
             Text(
-              "Capital: " + item.countrydata.capital_city.toString(),
+              "Capital: " + item.countryData.capital_city.toString(),
               textAlign: TextAlign.start,
             ),
             Text(
-              "Confirmed cases: " + item.countrydata.confirmed.toString(),
+              "Confirmed cases: " + item.countryData.confirmed.toString(),
               textAlign: TextAlign.start,
             ),
             Text(
-              "Confirmed deaths: " + item.countrydata.deaths.toString(),
+              "Confirmed deaths: " + item.countryData.deaths.toString(),
               textAlign: TextAlign.start,
             ),
             Text(
-              "Recovered: " + item.countrydata.recovered.toString(),
+              "Recovered: " + item.countryData.recovered.toString(),
               textAlign: TextAlign.start,
             ),
             Expanded(
@@ -338,10 +338,13 @@ class FavoriteListItem extends StatelessWidget {
   }
 
   double _calcPercent() {
-    if (item.countrydata.confirmed != null && item.countrydata.population != null) {
-      return (item.countrydata.confirmed!.toDouble() / item.countrydata.population!.toDouble()).toDouble();
+    if (item.countryData.confirmed != null && item.countryData.population != null) {
+      return (item.countryData.confirmed!.toDouble() / item.countryData.population!.toDouble()).toDouble();
     } else {
       return 0.0;
     }
   }
 }
+
+
+ */

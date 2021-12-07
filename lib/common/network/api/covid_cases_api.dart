@@ -1,31 +1,31 @@
-import 'package:covid_tracker/model/json_models.dart';
+import 'package:covid_tracker/common/data/model/country.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class CovidCasesApi {
   final _baseUrl = 'https://covid-api.mmediagroup.fr';
 
-  Future<Country> getCasesByCountry(String country) async {
+  Future<CountryResponse> getCasesByCountry(String country) async {
     final parameters = {'country': country};
     final response = await http
         .get(Uri.https('covid-api.mmediagroup.fr', 'v1/cases', parameters));
-    return Country.fromJson(jsonDecode(response.body));
+    return CountryResponse.fromJson(jsonDecode(response.body));
   }
 
-  Future<Map<String, Country>> getAllCases() async {
+  Future<Map<String, CountryResponse>> getAllCases() async {
     final response =
         await http.get(Uri.https('covid-api.mmediagroup.fr', 'v1/cases'));
     final responseData = jsonDecode(response.body) as Map<String, dynamic>;
     return responseData
-        .map((key, value) => MapEntry(key, Country.fromJson(value)));
+        .map((key, value) => MapEntry(key, CountryResponse.fromJson(value)));
   }
 
-  Future<Map<String, Country>> getCasesByContinents(String continent) async {
+  Future<Map<String, CountryResponse>> getCasesByContinents(String continent) async {
     final parameters = {'continent': continent};
     final response = await http
         .get(Uri.https('covid-api.mmediagroup.fr', 'v1/cases', parameters));
     final responseData = jsonDecode(response.body) as Map<String, dynamic>;
     return responseData
-        .map((key, value) => MapEntry(key, Country.fromJson(value)));
+        .map((key, value) => MapEntry(key, CountryResponse.fromJson(value)));
   }
 }

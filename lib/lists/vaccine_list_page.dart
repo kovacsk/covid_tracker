@@ -3,7 +3,7 @@ import 'package:covid_tracker/details/vaccine_detail_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-
+/*
 import '../details/country_detail_page.dart';
 import '../model/json_models.dart';
 
@@ -237,5 +237,7 @@ class ListItem extends StatelessWidget {
 
   }
 }
+
+ */
   
 

@@ -1,3 +1,4 @@
+/*
 import 'package:covid_tracker/model/json_models.dart';
 
 import 'package:covid_tracker/repositories/network_repository.dart';
@@ -207,3 +208,6 @@ class ListItem extends StatelessWidget {
     );
   }
 }
+
+
+ */
